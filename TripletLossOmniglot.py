@@ -5,7 +5,6 @@ import torch.optim as optim
 from torch.utils.data import DataLoader, Dataset
 from torchvision.datasets import Omniglot
 from torchvision.transforms import transforms
-import matplotlib.pyplot as plt
 import random
 
 
