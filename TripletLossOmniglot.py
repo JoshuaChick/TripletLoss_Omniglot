@@ -1,6 +1,5 @@
 import torch
 import torch.nn as nn
-import torch.nn.functional as functional
 import torch.optim as optim
 from torch.utils.data import DataLoader, Dataset
 from torchvision.datasets import Omniglot
