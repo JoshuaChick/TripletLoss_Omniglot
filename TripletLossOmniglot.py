@@ -176,8 +176,8 @@ for epoch in range(EPOCHS):
                 for k in range(20):
                     support_set_outputs[k] = siamese_net(support_set[k])
 
-                for m, (X, y) in enumerate(test_dataset):
-                    test_output = siamese_net(X)
+                for m, (X, y) in enumerate(test_loader):
+                    test_output = siamese_net(X[0])
 
                     difference_scores = torch.zeros(20, dtype=torch.float32)
 
@@ -185,7 +185,7 @@ for epoch in range(EPOCHS):
                         difference_scores[j] = torch.square(torch.norm(support_set_outputs[j] - test_output))
 
                     # Least different support_set example is answer
-                    if torch.argmin(difference_scores) == y:
+                    if torch.argmin(difference_scores) == int(y):
                         correct += 1
                     total += 1
 
