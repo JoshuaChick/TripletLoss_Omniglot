@@ -81,7 +81,7 @@ class TripletsDataset(Dataset):
 
 
 ############## GETS SUPPORT SET ##############
-# Even though omni_train has 659 different chars, an alphabet of only 20 chars will be used to make testing quicker.
+# Even though omni_test has 659 different chars, an alphabet of only 20 chars will be used to make testing quicker.
 omni_test = Omniglot(download=True, root='./', transform=transforms.ToTensor(), background=False)
 
 """
