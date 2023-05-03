@@ -51,8 +51,8 @@ class TripletsDataset(Dataset):
 
         for i in range(964):
             # Numbers representing other 963 characters (current character is removed)
-            other_chars = [k for k in range(964)]
-            other_chars.pop(i)
+            other_chars_index = [k for k in range(964)]
+            other_chars_index.pop(i)
 
             for j in range(1, 20):
                 # Gets anchor   0, 20, 40, ... (20 * 964)  (same for every iteration of j for loop)
@@ -62,8 +62,8 @@ class TripletsDataset(Dataset):
                 positive = omni_train[i * 20 + j][0]
 
                 # Gets negative   index of start of examples of different char, then adds 0 - 19
-                other_char = random.randint(0, 962)
-                negative = omni_train[other_char * 20 + random.randint(0, 19)][0]
+                other_char_index = other_chars_index[random.randint(0, 962)]
+                negative = omni_train[other_char_index * 20 + random.randint(0, 19)][0]
 
                 anchor = anchor.view(1, 11025)
                 positive = positive.view(1, 11025)
