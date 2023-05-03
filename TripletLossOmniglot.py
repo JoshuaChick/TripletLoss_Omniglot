@@ -85,8 +85,8 @@ omni_test = Omniglot(download=True, root='./', transform=transforms.ToTensor(), 
 """
 Support set will be in the form (20 characters in the form 1 x 11025):
 [
-    [x, x, x, ...], 1 x 11025
-    [x, x, x, ...],
+    [x, x, ...], 1 x 11025
+    [x, x, ...],
     ...
 ]
 """
@@ -102,8 +102,8 @@ class TestDataset(Dataset):
         """
         The test dataset will be in the form (20 chars, 19 examples of each (as one has been used in support_set)):
         [
-            [[x, x, x, ...], y],
-            [[x, x, x, ...], y],
+            [[x, x, ...], y],
+            [[x, x, ...], y],
             ...
         ]
         (NOTE: y-values correspond to INDEX in support_set)
