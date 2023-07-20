@@ -100,7 +100,8 @@ for i in range(20):
 class TestDataset(Dataset):
     def __init__(self):
         """
-        The test dataset will be in the form (20 chars, 19 examples of each (as one has been used in support_set)):
+        The test dataset will be in the form (380 image answer pairs, as there are 19 examples for each char in the 20
+        character test alphabet (as one has been used in support_set)):
         [
             [[x, x, ...], y],
             [[x, x, ...], y],
